@@ -6,7 +6,7 @@ const Home = () => {
       <div className="bg-gray-50 text-gray-600">
         <div className="container mx-auto px-4 h-24 flex items-center">
           <div className="font-black">
-            Logo
+            <img src='./airplane.png' alt='' />
           </div>
           <ul className="ml-auto flex space-x-4">
             <li>
@@ -56,7 +56,7 @@ const Home = () => {
 
       {/* Featured Resort Section */}
       <div>
-        <div className='container mx-auto px-4 py-10'>
+        <div className='container mx-auto px-4 py-20'>
           <div className='flex '>
             <div className='pr-10'>
               <div className='text-sm text-gray-400 font-medium'>FEATURED RESORTS</div>
@@ -112,6 +112,35 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className='py-20'>
+        <div className='container mx-auto px-4 flex justify-center'></div>
+        <form className='space-x-4'>
+                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500'>
+                  <option value="">Choose state</option>
+                </select>
+                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500'>
+                  <option value="">Choose city</option>
+                </select>
+                <button className='inline-flex flex items-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
+                <svg className='w-4 h-4 mr-1' data-slot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
+                </svg>
+                  Search resorts
+                </button>
+              </form>
+      </div>
+
+      <div className='border-t border-gray-300'>
+        <div className='container mx-auto px-4 flex items-center justify-between'></div>
+        <div className=" text-gray-400 font-black">
+          </div>
+          <div className='flex items-center justify-evenly'>
+            <img src='./instagram.png' alt='' width="50"/>
+            <img src='./twitter.png' alt=''/>
+            <img src='./facebook.png' alt=''/>
+          </div>
       </div>
     </>
   );
