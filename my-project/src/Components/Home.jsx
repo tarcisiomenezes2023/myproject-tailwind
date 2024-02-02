@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -10,16 +10,13 @@ const Home = () => {
           </div>
           <ul className="ml-auto flex space-x-4">
             <li>
-              <a href="" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">How to book</a>
+              <Link to="" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Book now</Link>
             </li>
             <li>
-              <a href="" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">About us</a>
+              <Link to="/about-us" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">About us</Link>
             </li>
             <li>
-              <a href="" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Information</a>
-            </li>
-            <li>
-              <a href="" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Contact</a>
+              <Link to="/contact" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Contact</Link>
             </li>
           </ul>
         </div>
@@ -67,12 +64,12 @@ const Home = () => {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </div>
 
-              <button className='inline-flex flex items-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
+              <Link to="/new-request"><button className='mt-4 inline-flex flex items-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
                 Request reservation
                 <svg className='w-4 h-4 ml-2' data-slot="icon" fill="none" strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
                 </svg>
-              </button>
+              </button></Link>
             </div>
             <div className=' flex-shrink-0 lg:ml-auto mb-5 lg:mb-0'>
               <img src='./feartured-img.jpg' alt='' width="450" />
