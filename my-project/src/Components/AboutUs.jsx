@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom"
 
 const AboutUs = () => {
   return (
@@ -10,14 +10,17 @@ const AboutUs = () => {
             <img src='./airplane.png' alt='Airplane' />
           </div>
           <ul className="ml-auto flex space-x-4">
-            <li>
-              <a href="/" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">How to book</a>
+          <li>
+              <Link to="/" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Home</Link>
             </li>
             <li>
-              <a href="/" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">About us</a>
+              <Link to="/how-to-book" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Book now</Link>
             </li>
             <li>
-              <a href="/" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Contact</a>
+              <Link to="/about-us" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">About us</Link>
+            </li>
+            <li>
+              <Link to="/contact" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Contact</Link>
             </li>
           </ul>
         </div>

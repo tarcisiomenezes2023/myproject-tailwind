@@ -10,8 +10,11 @@ const Contact = () => {
             <img src='./airplane.png' alt='Airplane' />
           </div>
           <ul className="ml-auto flex space-x-4">
+          <li>
+              <Link to="/" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Home</Link>
+            </li>
             <li>
-              <Link to="" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Book now</Link>
+              <Link to="/how-to-book" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">Book now</Link>
             </li>
             <li>
               <Link to="/about-us" className="text-sm text-gray-600 hover:text-gray-800 hover:underline">About us</Link>
