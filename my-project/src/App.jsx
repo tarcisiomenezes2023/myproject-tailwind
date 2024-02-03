@@ -4,6 +4,7 @@ import AboutUs from './Components/AboutUs';
 import Contact from './Components/Contact';
 import HowToBook from './Components/HowToBook';
 import NewRequest from './Components/NewRequest';
+import Search from './Components/Search';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/how-to-book" element={<HowToBook />} />
           <Route path='/new-request' element={<NewRequest />} />
+          <Route path='/search-resorts' element={<Search />} />
           </Routes>
       </Router>
     </div>

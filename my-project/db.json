@@ -1,0 +1,80 @@
+{
+    "information": {
+      "states": [
+        {
+          "id": 1,
+          "name": "Bahia",
+          "cities": [
+            {
+              "id": 1,
+              "name": "Salvador"
+            },
+            {
+              "id": 2,
+              "name": "Mata de São João"
+            },
+            {
+              "id": 3,
+              "name": "Porto Seguro"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Sao Paulo",
+          "cities": [
+            {
+              "id": 1,
+              "name": "Santos"
+            },
+            {
+              "id": 2,
+              "name": "São Vicente"
+            },
+            {
+              "id": 3,
+              "name": "Guarujá"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Pernambuco",
+          "cities": [
+            {
+              "id": 1,
+              "name": "Recife"
+            },
+            {
+              "id": 2,
+              "name": "Olinda"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Rio de Janeiro",
+          "cities": [
+            {
+              "id": 1,
+              "name": "Rio de Janeiro"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Sergipe",
+          "cities": [
+            {
+              "id": 1,
+              "name": "Aracajú"
+            },
+            {
+              "id": 2,
+              "name": "Barra Dos Coqueiros"
+            }
+          ]
+        }
+      ]
+    }
+  }

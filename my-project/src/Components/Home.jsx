@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import React, { useState, useEffect } from "react";
 
 const Home = () => {
   return (
@@ -39,12 +41,12 @@ const Home = () => {
                 <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500'>
                   <option value="">Choose city</option>
                 </select>
-                <button className='col-span-2 lg:col-span-1 inline-flex flex items-center justify-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
+                <Link to="/search-resorts"><button className='col-span-2 lg:col-span-1 inline-flex flex items-center justify-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
                 <svg className='w-4 h-4 mr-1' data-slot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
                 </svg>
                   Search resorts
-                </button>
+                </button></Link>
               </form>
             </div>
           </div>
