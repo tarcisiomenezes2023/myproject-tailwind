@@ -153,16 +153,22 @@ const Home = () => {
       <div className='py-20'>
         <div className='container max-w-5xl mx-auto px-4 flex justify-center'></div>
         <form className='grid grid-cols-2 lg:grid-cols-3 gap-4'>
-                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500'>
+                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500' onChange={handleStateChange} value={selectedState}>
                   <option value="">Choose state</option>
+                  {states.map(state => (
+                    <option key={state.id} value={state.id}>{state.name}</option>
+                  ))}
                 </select>
-                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500'>
+                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500' value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                   <option value="">Choose city</option>
+                  {cities.map(city => (
+                    <option key={city.id} value={city.id}>{city.name}</option>
+                  ))}
                 </select>
                 <button className='col-span-2 lg:col-span-1 inline-flex flex items-center justify-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
-                <svg className='w-4 h-4 mr-1' data-slot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
-                </svg>
+                  <svg className='w-4 h-4 mr-1' data-slot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
+                  </svg>
                   Search resorts
                 </button>
               </form>
