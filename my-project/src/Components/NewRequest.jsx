@@ -2,7 +2,15 @@
 import { Link } from 'react-router-dom';
 
 const NewRequest = () => {
+
+
   return (
+
+  
+    
+    
+
+
     /* Navigation bar */
     <div>
       <div className="bg-gray-50 text-gray-600">

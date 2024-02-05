@@ -1,8 +1,41 @@
 import { Link } from "react-router-dom";
-import axios from 'axios';
 import React, { useState, useEffect } from "react";
 
 const Home = () => {
+  const [states, setStates] = useState([]);
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/information');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        console.log(data);
+        if (Array.isArray(data.states)) {
+          setStates(data.states);
+        } else {
+          console.error('Data not available in the expected format:', data);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleStateChange = (e) => {
+    const selectedStateId = e.target.value;
+    setSelectedState(selectedStateId);
+    const selectedStateData = states.find(state => state.id === parseInt(selectedStateId));
+    setCities(selectedStateData ? selectedStateData.cities : []);
+  };
+
   return (
     <>
       <div className="bg-gray-50 text-gray-600">
@@ -24,7 +57,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Banner Section */}
       <div style={{ backgroundImage: `url('./Melhores-cadeiras-de-praia.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '450px' }}>
         <div className="container max-w-5xl mx-auto px-4 h-full flex items-center justify-center">
           <div>
@@ -35,25 +67,30 @@ const Home = () => {
 
             <div className='mt-8'>
               <form className='grid grid-cols-2 lg:grid-cols-3 gap-4'>
-                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500'>
+                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500' onChange={handleStateChange} value={selectedState}>
                   <option value="">Choose state</option>
+                  {states.map(state => (
+                    <option key={state.id} value={state.id}>{state.name}</option>
+                  ))}
                 </select>
-                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500'>
+                <select className='bg-gray-50 px-3 py-2 border border-gray-300 rounded text-gray-500' value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
                   <option value="">Choose city</option>
+                  {cities.map(city => (
+                    <option key={city.id} value={city.id}>{city.name}</option>
+                  ))}
                 </select>
-                <Link to="/search-resorts"><button className='col-span-2 lg:col-span-1 inline-flex flex items-center justify-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
-                <svg className='w-4 h-4 mr-1' data-slot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
-                </svg>
+                <button className='col-span-2 lg:col-span-1 inline-flex flex items-center justify-center text-yellow-900 bg-yellow-500 font-medium px-3 py-2 rounded'>
+                  <svg className='w-4 h-4 mr-1' data-slot="icon" fill="none" strokeWidth={1.5} stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"></path>
+                  </svg>
                   Search resorts
-                </button></Link>
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Featured Resort Section */}
       <div>
         <div className='container max-w-5xl mx-auto px-4 py-20'>
           <div className='flex flex-col-reverse lg:flex-row'>
@@ -80,7 +117,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Know more about resorts Section */}
+      
       <div className='container max-w-5xl mx-auto px-4'>
         <div>
           <h3 className='text-2xl text-center text-gray-500 font-semibold mb-8'>Know more about resorts</h3>
